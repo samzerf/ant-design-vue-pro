@@ -23,7 +23,7 @@
 
 <script>
 import SubMenu from "./SubMenu";
-
+import { check } from "../utils/auth";
 export default {
   components: {
     SubMenu,
@@ -54,6 +54,9 @@ export default {
         return menuData;
       }
       routes.forEach((item) => {
+        if (item.meta && item.meta.auth && !check(item.meta.auth)) {
+          return;
+        }
         if (item.name && !item.hideInMenu) {
           this.openKeysMap[item.path] = parentKeys;
           this.selectedKeysMap[item.path] = [selectedKeys || item.path];
