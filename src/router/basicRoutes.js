@@ -27,6 +27,13 @@ const routes = [
         ],
       },
       {
+        path: "/table",
+        name: "table",
+        meta: { icon: "table", title: "表格" },
+        component: () =>
+          import(/* webpackChunkName: "table" */ "../views/Tables/Table"),
+      },
+      {
         path: "/form",
         name: "form",
         meta: { icon: "form", title: "表单", auth: ["admin"] },

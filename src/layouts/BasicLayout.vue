@@ -13,6 +13,7 @@
       <a-layout>
         <a-layout-header style="background: #fff; padding: 0">
           <a-icon
+            v-auth="['admin']"
             class="trigger"
             @click="collapsed = !collapsed"
             :type="collapsed ? 'menu-unfold' : 'menu-fold'"
