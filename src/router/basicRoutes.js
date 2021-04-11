@@ -86,6 +86,21 @@ const routes = [
           },
         ],
       },
+      {
+        path: "/code",
+        name: "code",
+        meta: { icon: "codepen", title: "代码编辑" },
+        component: { render: (h) => h("router-view") },
+        children: [
+          {
+            path: "/code/vue",
+            name: "runvue",
+            meta: { title: "动态渲染" },
+            component: () =>
+              import(/* webpackChunkName: "runvue" */ "../views/Code/RunVue"),
+          },
+        ],
+      },
     ],
   },
 ];
