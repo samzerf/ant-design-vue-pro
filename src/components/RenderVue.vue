@@ -1,5 +1,5 @@
 <template>
-  <div ref="render"></div>
+  <div class="render" ref="render"></div>
 </template>
 
 <script>
@@ -103,3 +103,11 @@ export default {
   },
 };
 </script>
+
+<style lang="less" scoped>
+.render {
+  height: 100%;
+  background: #fff;
+  padding: 20px;
+}
+</style>

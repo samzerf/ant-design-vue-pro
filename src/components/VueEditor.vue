@@ -1,7 +1,12 @@
 <template>
-  <div ref="editorWrap">
-    <codemirror ref="vueEditor" :value="code" :options="opts" @input="onchange">
-    </codemirror>
+  <div ref="editorWrap" style="height: 100%">
+    <codemirror
+      style="height: 100%"
+      ref="vueEditor"
+      :value="code"
+      :options="opts"
+      @input="onchange"
+    ></codemirror>
   </div>
 </template>
 
@@ -45,7 +50,6 @@ export default {
       this.$emit("input", code);
     },
     resize() {
-      console.log("resize");
       this.$refs.vueEditor.codemirror.setSize("auto", "100%");
     },
   },

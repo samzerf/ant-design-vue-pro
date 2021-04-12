@@ -11,7 +11,7 @@
         <SiderMenu />
       </a-layout-sider>
       <a-layout>
-        <a-layout-header style="background: #fff; padding: 0">
+        <a-layout-header class="layout-header">
           <a-icon
             v-auth="['admin']"
             class="trigger"
@@ -20,7 +20,7 @@
           />
           <Header />
         </a-layout-header>
-        <a-layout-content style="margin: 0 16px">
+        <a-layout-content class="layout-content">
           <!-- breadcrumb -->
           <!-- <div
             :style="{ padding: '24px', background: '#fff', minHeight: '360px' }"
@@ -56,6 +56,16 @@ export default {
 </script>
 
 <style scoped>
+.layout-header {
+  padding: 0;
+  background: #fff;
+  box-shadow: 0 1px 4px rgb(0 21 41 / 8%);
+}
+.layout-content {
+  box-sizing: border-box;
+  padding: 24px;
+  margin: 0;
+}
 .trigger {
   padding: 0 20px;
   line-height: 64px;

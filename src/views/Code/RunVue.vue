@@ -1,9 +1,12 @@
 <template>
   <div class="display">
     <div class="editor">
-      <VueEditor v-model="vueCode" />
-      <a-button type="primary" @click="code = vueCode">Run</a-button>
+      <VueEditor style="height: 100%" v-model="vueCode" />
+      <a-button class="btn-run" type="primary" @click="code = vueCode"
+        >Run</a-button
+      >
     </div>
+    <div class="divider"></div>
     <div class="render">
       <RenderVue :code="code" />
     </div>
@@ -38,5 +41,16 @@ export default {
 .editor,
 .render {
   flex: 1;
+}
+.editor {
+  position: relative;
+  .btn-run {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+}
+.divider {
+  width: 10px;
 }
 </style>
